@@ -15,23 +15,31 @@
 </div>
     <div class="container">
 
-   <form>
-      <fieldset>
-        <legend> Account Login</legend>
-        <label
-          >UserName:
-          <input type="text" name="username" placeholder="userName..." /></label
-        ><br>
-        <label>Email:
-          <input type="email" name="email" placeholder="Email..."  /></label><br />
-        <label>Password:
-          <input type="password"name="password"placeholder="password..." /></label
-        ><br />
-        <input type="checkbox" name="" id="check">
-        
-    <input type="submit" value="Login" />
-      </fieldset>
-    </form>
+   <form id="login-form">
+    <fieldset>
+      <legend>Account Login</legend>
+
+      <label>
+        Username:
+        <input type="text" id="username" maxlength="5" required  />
+      </label><br>
+
+      <label>
+        Password:
+        <input type="password" id="password" maxlength="6"required />
+      </label><br>
+
+       <label>
+      <input type="checkbox" id="check" required />
+      I agree to the terms
+    </label><br>
+
+
+      <input type="submit" value="Login" />
+      <div id="error-msg" style="color: red;"></div>
+    </fieldset>
+  </form>
+
     <div>
      </body>
 </html>

@@ -1,36 +1,23 @@
-let form = document.querySelector("form");
-let username = document.getElementsByName("username");
-let age = document.getElementsByName("age");
-let email = document.getElementsByName("email");
-let pw = document.getElementsByName("password");
-let confirm = document.getElementById("Confirm");
+document.getElementById('login-form').addEventListener('submit', function (e) {
+  e.preventDefault(); // Prevent form from submitting normally
 
-function handleSubmit(e) {
-  e.preventDefault();
+  const username = document.getElementById('username').value.trim();
+  const password = document.getElementById('password').value;
+  const errorMsg = document.getElementById('error-msg');
 
-  if (pw[0].value !== confirm.value) {
-    alert("passwords dont match");
-    return;
+  // Simulated credentials
+  const validUsername = 'admin';
+  const validPassword = '123456';
+
+  if (username === validUsername && password === validPassword) {
+    errorMsg.style.color = 'green';
+    errorMsg.textContent = 'Login successful! Redirecting...';
+
+    setTimeout(() => {
+      window.location.href = 'dashboard.html'; // Redirect to dashboard
+    }, 1000);
+  } else {
+    errorMsg.style.color = 'red';
+    errorMsg.textContent = 'Invalid username or password.';
   }
-
-  const regexStr = /^(?=.*[a-zA-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).*$/; // At least one letter, one number, and one special character
-
-  if (!regexStr.test(pw[0].value)) {
-    alert("Password needs number and symbol!");
-    return
-  }
-  alert("Submitted");
-}
-
-form.addEventListener("submit", handleSubmit);
-
-function validate(e) {
-  let usrValid = validUsername();
-
-  if (usrValid === false) {
-    e.returnValue = false;
-    return false;
-  }
-
-  let ageValid = validAge();
-}
+});
