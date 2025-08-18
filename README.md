@@ -5,4 +5,4 @@ use this credintial to Login to Dashboard:
   const validUsername = 'admin'
   const validPassword = '123456'
 
-DAshboard shows current date and time whcih  uses the BOM’s Date() object and updates the DOM.
+Dashboard shows current date and time which uses the BOM’s Date() object and updates the DOM.

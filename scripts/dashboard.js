@@ -120,4 +120,4 @@ tdStatus.classList.add("status");
 // Initial render
 
 renderTable();      
-localStorage.clear();
+//localStorage.clear();
