@@ -9,6 +9,7 @@ const dueDate = document.querySelector("#dueDate");
 const cardLink = document.querySelector("#cardLink");
 const tableBody = document.querySelector("#tableBody");
 const formError = document.querySelector("#formError");
+//const rmitem=document.querySelectorAll("Remove Card");
 
 // Load from localStorage
 let cards = JSON.parse(localStorage.getItem("cards")) || [];
@@ -41,6 +42,7 @@ form.addEventListener("submit", function (e) {
 function saveCards() {
   localStorage.setItem("cards", JSON.stringify(cards));
 }
+
 
 // Render table
 
@@ -103,13 +105,13 @@ tdStatus.classList.add("status");
     });
     tdAction.appendChild(btn);
 
-    // Assemble row
+    
+// Assemble row
     tr.appendChild(tdName);
     tr.appendChild(tdDue);
     tr.appendChild(tdLink);
     tr.appendChild(tdStatus);
     tr.appendChild(tdAction);
-
     fragment.appendChild(tr);
   });
 
@@ -117,5 +119,5 @@ tdStatus.classList.add("status");
 }
 // Initial render
 
-
 renderTable();      
+localStorage.clear();
