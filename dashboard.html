@@ -1,11 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Dashboard</title>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <script defer src="./scripts/dashboard.js"></script>
+  <title>Credit Card Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+      background-color: #f4f4f4;
+    }
+    h1 {
+      text-align: center;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #007BFF;
+      color: white;
+    }
+    .overdue {
+      background-color: #f7848e;
+    }
+    .paid {
+      background-color: #d4edda;
+    }
+    .status {
+      font-weight: bold;
+    }
+    .form-section {
+      margin-top: 2rem;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 5px;
+    }
+
+.hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-  <h2>Welcome to your dashboard!</h2>
-  <p>You’ve successfully logged in.</p>
+  <h1>💳 Credit Card Bill Dashboard</h1>
+
+  <!-- BOM Feature: Show current date and time -->
+  <p id="currentTime"></p>
+
+  <!-- Form with HTML + JS validation -->
+  <div class="form-section">
+    <h2>Add New Credit Card</h2>
+    <form id="cardForm">
+      <label>
+        Card Name:
+        <input type="text" id="cardName" required minlength="3" />
+      </label><br><br>
+      <label>
+        Due Date:
+        <input type="date" id="dueDate" required />
+      </label><br><br>
+      <label>
+        Website:
+        <input type="url" id="cardLink" required />
+      </label><br><br>
+      <button type="submit">Add Card</button>
+    </form>
+    <p id="formError" class="hidden" style="color:red;"></p>
+  </div>
+
+  <!-- Table -->
+  <table id="cardTable">
+    <thead>
+      <tr>
+        <th>Card Name</th>
+        <th>Due Date</th>
+        <th>Website</th>
+        <th>Status</th>
+        <th>Mark Paid</th>
+      </tr>
+     </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  
 </body>
 </html>
