@@ -1,4 +1,4 @@
-Implement basic form validation using any combination of built-in HTML validation attributes and DOM-event-driven JavaScript validation.
+Implemented basic form validation using any combination of built-in HTML validation attributes and DOM-event-driven JavaScript validation.
 (ADDED login page which uses required,built in HTML validation attributes like required,type,checkbox )
 
 use this credintial to Login to Dashboard:
